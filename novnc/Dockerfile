@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:latest
 
 # Setup demo environment variables
 ENV HOME=/root \
@@ -10,8 +10,8 @@ ENV HOME=/root \
 	DISPLAY_WIDTH=1024 \
 	DISPLAY_HEIGHT=768
 
-# x11vnc is in testing repo
-RUN echo "http://dl-6.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+# x11vnc is in comunity repo
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories
 
 # Install git, supervisor, VNC, & X11 packages
 RUN apk --update --upgrade add \
